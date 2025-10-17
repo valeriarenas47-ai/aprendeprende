@@ -86,10 +86,6 @@
             <input type="number" id="tax" value="10" min="0" max="100" step="1">
           </div>
           <div class="col-4">
-            <label>Meses a simular</label>
-            <input type="number" id="meses" value="24" min="1" max="120">
-          </div>
-          <div class="col-4">
             <label>Depreciación mensual ($ opcional)</label>
             <input type="number" id="dep" value="50000" min="0" step="1000">
           </div>
@@ -244,7 +240,8 @@
     function importarCSV(file){
       const reader = new FileReader();
       reader.onload = ()=>{
-        const lines = reader.result.split(/?
+        const lines = reader.result.split(/
+?
 /).filter(Boolean);
         // intentar leer ajustes de la 2a columna en adelante
         const vals=[];
